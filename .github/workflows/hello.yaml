@@ -1,9 +1,6 @@
 name: Node.js CI
 
-on:
-  push:
-    branches:
-      - main  # Adjust this branch name as needed
+on: [push]
 
 jobs:
   build:
@@ -11,7 +8,7 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v2
 
     - name: Set up Node.js
       uses: actions/setup-node@v2
@@ -21,8 +18,14 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Run tests
+    - name: Start the server
       run: npm start
 
+    - name: Wait for the server to start
+      run: sleep 5  # Adjust the sleep duration as needed
 
+    - name: Run tests
+      run: curl http://localhost:3002  # Adjust the URL if you chose a different port
 
+    - name: Stop the server
+      run: pkill -f "node app.js"  # Adjust the script name if necessary
