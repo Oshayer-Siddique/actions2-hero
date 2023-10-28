@@ -1,11 +1,28 @@
-on: push
+name: Node.js CI
+
+on:
+  push:
+    branches:
+      - main  # Adjust this branch name as needed
+
 jobs:
-  build-node:
-    runs-on: ubuntu
+  build:
+    runs-on: ubuntu-latest
+
     steps:
-      - run: node --version
-      - run: npm --version
-      - uses: actions/checkout@v3
-      - run: npm install
-      - run: npm start
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 18  # You can specify your desired Node.js version
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run tests
+      run: npm start
+
+
 
