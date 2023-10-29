@@ -39,11 +39,8 @@ jobs:
      # Adjust the URL if you chose a different port
     - name: Merge branches into main
       run: | 
-        git checkout origin/main
-        git pull origin main
-        git merge Oshayer
-        git pull
-        git push origin main
+        git merge main
+
 
     - name: Stop the server
       run: pkill -f "node app.js"  # Adjust the script name if necessary
