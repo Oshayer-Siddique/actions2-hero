@@ -40,7 +40,7 @@ jobs:
     - name: Merge branches into main
       run: | 
         git status
-        git checkout origin/main
+        git checkout Oshayer
 
 
     - name: Stop the server
