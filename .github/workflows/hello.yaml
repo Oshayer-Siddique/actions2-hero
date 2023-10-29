@@ -40,9 +40,9 @@ jobs:
     - name: Merge branches into main
       run: | 
         git checkout main
-        git pull -u origin main
+        git pull origin main
         git merge Oshayer
-        git push -u origin main
+        git push origin main
 
     - name: Stop the server
       run: pkill -f "node app.js"  # Adjust the script name if necessary
