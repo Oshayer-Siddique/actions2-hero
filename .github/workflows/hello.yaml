@@ -39,7 +39,7 @@ jobs:
      # Adjust the URL if you chose a different port
     - name: Merge branches into main
       run: | 
-        git merge main
+        git status
 
 
     - name: Stop the server
