@@ -40,6 +40,7 @@ jobs:
     - name: Merge branches into main
       run: | 
         git status
+        git checkout 'origin/main'
 
 
     - name: Stop the server
