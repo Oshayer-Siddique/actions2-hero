@@ -34,7 +34,15 @@ jobs:
       run: sleep 5  # Adjust the sleep duration as needed
 
     - name: Run tests
-      run: curl http://localhost:3000  # Adjust the URL if you chose a different port
+      run: curl http://localhost:3000 
+      
+     # Adjust the URL if you chose a different port
+    - name: Merge branches into main
+      run: | 
+        git checkout main
+        git pull -u origin main
+        git merge Oshayer
+        git push -u origin main
 
     - name: Stop the server
       run: pkill -f "node app.js"  # Adjust the script name if necessary
