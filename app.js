@@ -15,7 +15,7 @@ app.get('/data', (req, res) => {
   res.send('Hello, Oshayer ');
 });
 
-
+console.log("Datathon");
 
 
 // Start the server
