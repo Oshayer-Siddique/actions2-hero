@@ -17,6 +17,8 @@ app.get('/data', (req, res) => {
 
 console.log("Datathon");
 
+console.log("What a life");
+
 
 // Start the server
 app.listen(port, () => {
