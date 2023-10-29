@@ -10,6 +10,12 @@ app.get('/', (req, res) => {
   res.send('Hello, World!');
 });
 
+app.get('/data', (req, res) => {
+  res.send('Hello, Oshayer ');
+});
+
+
+
 // Start the server
 app.listen(port, () => {
   console.log(`Server is listening on port ${port}`);
